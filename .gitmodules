@@ -1,0 +1,99 @@
+[submodule "LANDIS-II/Core-Model-v8-LINUX"]
+	path = LANDIS-II/Core-Model-v8-LINUX
+	url = https://github.com/FOR-CAST/Core-Model-v8-LINUX
+[submodule "LANDIS-II/Support-Library-Dlls-v8"]
+	path = LANDIS-II/Support-Library-Dlls-v8
+	url = https://github.com/FOR-CAST/Support-Library-Dlls-v8
+[submodule "LANDIS-II/Extension-Base-Fire"]
+	path = LANDIS-II/Extension-Base-Fire
+	url = https://github.com/FOR-CAST/Extension-Base-Fire
+[submodule "LANDIS-II/Extension-Biomass-Succession"]
+	path = LANDIS-II/Extension-Biomass-Succession
+	url = https://github.com/FOR-CAST/Extension-Biomass-Succession
+[submodule "LANDIS-II/Extension-Output-Biomass"]
+	path = LANDIS-II/Extension-Output-Biomass
+	url = https://github.com/FOR-CAST/Extension-Output-Biomass
+[submodule "LANDIS-II/Extension-Output-Biomass-By-Age"]
+	path = LANDIS-II/Extension-Output-Biomass-By-Age
+	url = https://github.com/FOR-CAST/Extension-Output-Biomass-By-Age
+[submodule "LANDIS-II/Extension-Output-Biomass-Reclass"]
+	path = LANDIS-II/Extension-Output-Biomass-Reclass
+	url = https://github.com/FOR-CAST/Extension-Output-Biomass-Reclass
+[submodule "LANDIS-II/Extension-Output-Cohort-Statistics"]
+	path = LANDIS-II/Extension-Output-Cohort-Statistics
+	url = https://github.com/FOR-CAST/Extension-Output-Cohort-Statistics
+[submodule "LANDIS-II/Extension-Root-Rot"]
+	path = LANDIS-II/Extension-Root-Rot
+	url = https://github.com/FOR-CAST/Extension-Root-Rot
+[submodule "LANDIS-II/Extension-PnET-Succession"]
+	path = LANDIS-II/Extension-PnET-Succession
+	url = https://github.com/FOR-CAST/Extension-PnET-Succession
+[submodule "LANDIS-II/Extension-Output-Biomass-PnET"]
+	path = LANDIS-II/Extension-Output-Biomass-PnET
+	url = https://github.com/FOR-CAST/Extension-Output-Biomass-PnET
+[submodule "LANDIS-II/Extension-Base-Wind"]
+	path = LANDIS-II/Extension-Base-Wind
+	url = https://github.com/FOR-CAST/Extension-Base-Wind
+[submodule "LANDIS-II/Extension-Biomass-Harvest"]
+	path = LANDIS-II/Extension-Biomass-Harvest
+	url = https://github.com/FOR-CAST/Extension-Biomass-Harvest
+[submodule "LANDIS-II/Extension-Dynamic-Biomass-Fuels"]
+	path = LANDIS-II/Extension-Dynamic-Biomass-Fuels
+	url = https://github.com/FOR-CAST/Extension-Dynamic-Biomass-Fuels
+[submodule "LANDIS-II/Extension-Dynamic-Fire-System"]
+	path = LANDIS-II/Extension-Dynamic-Fire-System
+	url = https://github.com/FOR-CAST/Extension-Dynamic-Fire-System
+[submodule "LANDIS-II/Extension-ForCS-Succession"]
+	path = LANDIS-II/Extension-ForCS-Succession
+	url = https://github.com/FOR-CAST/Extension-ForCS-Succession
+[submodule "LANDIS-II/Extension-Land-Use-Plus"]
+	path = LANDIS-II/Extension-Land-Use-Plus
+	url = https://github.com/FOR-CAST/Extension-Land-Use-Plus
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Biomass"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Biomass
+	url = https://github.com/FOR-CAST/Library-Biomass
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Biomass-Harvest"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Biomass-Harvest
+	url = https://github.com/FOR-CAST/Library-Biomass-Harvest
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Climate"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Climate
+	url = https://github.com/FOR-CAST/Library-Climate
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Core"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Core
+	url = https://github.com/FOR-CAST/Library-Core
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Datasets"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Datasets
+	url = https://github.com/FOR-CAST/Library-Datasets
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Harvest-Mgmt"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Harvest-Mgmt
+	url = https://github.com/FOR-CAST/Library-Harvest-Mgmt
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Initial-Community"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Initial-Community
+	url = https://github.com/FOR-CAST/Library-Initial-Community
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Metadata"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Metadata
+	url = https://github.com/FOR-CAST/Library-Metadata
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Parameters"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Parameters
+	url = https://github.com/FOR-CAST/Library-Parameters
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-PnET-Cohort"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-PnET-Cohort
+	url = https://github.com/FOR-CAST/Library-PnET-Cohort
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Site-Harvest"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Site-Harvest
+	url = https://github.com/FOR-CAST/Library-Site-Harvest
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Spatial"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Spatial
+	url = https://github.com/FOR-CAST/Library-Spatial
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Succession"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Succession
+	url = https://github.com/FOR-CAST/Library-Succession
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Universal-Cohort"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Universal-Cohort
+	url = https://github.com/FOR-CAST/Library-Universal-Cohort
+[submodule "/home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Utilities"]
+	path = /home/achubaty/Documents/GitHub/landis-ubuntu/LANDIS-II/Library-Utilities
+	url = https://github.com/FOR-CAST/Library-Utilities
+[submodule "LANDIS-II/Extension-Base-Harvest"]
+	path = LANDIS-II/Extension-Base-Harvest
+	url = https://github.com/FOR-CAST/Extension-Base-Harvest
