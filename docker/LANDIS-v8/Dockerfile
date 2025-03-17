@@ -5,21 +5,23 @@ FROM rocker/geospatial:4.4.3
 
 LABEL org.opencontainers.image.authors="achubaty@for-cast.ca"
 
+## safely allow ssh access to private GitHub repos via the build machine's ssh
+RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
+
 ENV C_INCLUDE_PATH=/usr/include/gdal
 ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LC_ALL=C.UTF-8
 
-RUN apt-get update -y && apt-get upgrade -y
-
-## install additional system dependencies
-RUN apt-get install -y \
-  git \
-  dotnet-sdk-8.0 \
-  libjpeg62 \
-  libpng16-16t64 \
-  software-properties-common \
-  wget \
+## update and install additional system dependencies
+RUN apt-get update -y && apt-get upgrade -y \
+  && apt-get install -y \
+    git \
+    dotnet-sdk-8.0 \
+    libjpeg62 \
+    libpng16-16t64 \
+    software-properties-common \
+    wget \
   && rm -rf /var/lib/apt/lists/*
 
 ## configure git
