@@ -6,10 +6,12 @@ FROM achubaty/geospatial:4.3.3-focal-ubuntugis
 
 LABEL org.opencontainers.image.authors="achubaty@for-cast.ca"
 
+ENV C_INCLUDE_PATH=/usr/include/gdal
+ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV DEBIAN_FRONTEND=noninteractive
 ENV LC_ALL=C.UTF-8
 
-RUN apt-get update && apt-get upgrade -y
+RUN apt-get update -y && apt-get upgrade -y
 
 ## install additional system dependencies
 RUN apt-get install -y \
@@ -52,13 +54,13 @@ RUN git -C ${LANDIS_CORE_DIR} clone ${LANDIS_GITHUB}/Support-Library-Dlls-v7 \
 COPY scripts/install_extensions_v7.R ./install_extensions_v7.R
 RUN Rscript ./install_extensions_v7.R
 
-RUN echo "alias landis='dotnet ${LANDIS_REL_DIR}/Landis.Console.dll'" >> ~/.bashrc
+RUN echo "alias landis='dotnet ${LANDIS_REL_DIR}/Landis.Console.dll'" >> /home/${DEFAULT_USER}/.bashrc
 
 ## switch to user's project directory
 WORKDIR ${PROJECT_DIR}
 
-RUN mkdir -p ${PROJECT_DIR}/inputs
-RUN mkdir -p ${PROJECT_DIR}/outputs
+## additional directory setup for volume mounts
+RUN mkdir -p ${PROJECT_DIR}
 RUN mkdir -p /mnt/scratch
 
 ## grant permissions to the user

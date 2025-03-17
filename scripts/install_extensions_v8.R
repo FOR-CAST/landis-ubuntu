@@ -27,50 +27,82 @@ landis.release.dir <- file.path(landis.core.dir, "build", "Release")
 landis.github.url <- "https://github.com/LANDIS-II-Foundation"
 landis.fork.url <- "https://github.com/FOR-CAST"
 
-## 1. get latest versions of extensions ------------------------------------------------------------
+## 0. rebuild specific versions of some libraries ------------------------------------------------------------
 
-landis.extensions <- c(
-  # "Extension-Base-BDA",
-  "Extension-Base-Fire",
-  # "Extension-Base-Wind",
-  # "Extension-Biomass-Browse",
-  # "Extension-Biomass-Drought",
-  # "Extension-Biomass-Harvest",
-  # "Extension-Biomass-Hurricane",
-  "Extension-Biomass-Succession",
-  # "Extension-Dynamic-Biomass-Fuels",
-  # "Extension-Dynamic-Fire-System",
-  # "Extension-Land-Use-Plus",
-  # "Extension-LinearWind",
-  # "Extension-Local-Habitat-Suitability-Output",
-  # "Extension-NECN-Succession",
-  # "Extension-Output-Wildlife-Habitat",
-  "Extension-Output-Biomass",
-  "Extension-Output-Biomass-By-Age",
-  "Extension-Output-Biomass-Reclass",
-  "Extension-Output-Cohort-Statistics"#,
-  #"Extension-Output-Max-Species-Age",
-  # "Extension-Social-Climate-Fire"
+landis.libraries <- list(
+  ## TODO: check whether others should be included
+  "Library-Initial-Community" = "5dc6dd299eef88ded1c88871470d58c26c1a4093",
+  "Library-Universal-Cohort" = "a1e84adc8073fb7c89ee078a38349b5d578d4179"
+)
+
+for (lib in landis.libraries) {
+  lib.name <- lib
+  lib.sha <- landis.libraries[[lib]]
+  message(glue("Cloning {lib} ..."))
+  system(glue("git -C {landis.dir} clone --depth 1 {landis.fork.url}/{lib.name}"))
+  system(glue("git -C {landis.dir}/{lib.name} checkout {lib.sha}"))
+
+  message(glue("Building {lib.name} ..."))
+  ## TODO: need to cleanup .csproj files
+  system(glue("dotnet build {landis.dir}/{lib.name} -c Release"))
+}
+
+## 1. get specific versions of extensions ------------------------------------------------------------
+
+## TODO: add Klemet/LANDIS-II-Forest-Roads-Simulation-extension
+## TODO: add Klemet/LANDIS-II-Magic-Harvest
+
+landis.extensions <- list(
+  ## Succession extensions
+  "Extension-Biomass-Succession" = "58ad3673e02abe82f437a6b68c44220c51351091",
+  # "Extension-DGS-Succession" = "", ## TODO: not yet ready for v8
+  # "Extension-ForCS-Succession = "", ## TODO: not yet ready for v8
+  "Extension-NECN-Succession" = "37ce246c37bab3448e3db134373deb56063e14ac",
+  # "Extension-PnET-Succession" = "", ## TODO: see Extension-PnET-Succession#17
+
+  ## Disturbance and other extensions
+  "Extension-Base-BDA" = "eb1d998a14b7555ddd7c527dda797669b0c99546",
+  "Extension-Base-Fire" = "40169a04b62be126e109c7990fa6a6d64a8ff895",
+  "Extension-Base-Wind" = "e0796d577a6221c78b10502da4fc7dd0ddfe08e9",
+  # "Extension-Biomass-Browse" = "", ## TODO: not yet ready for v8
+  "Extension-Biomass-Harvest" = "24b01fea5a90b05b2732c3e52e09a02fdb47db59",
+  "Extension-Biomass-Hurricane" = "a12806d77d4b251d8800766f124c39adf90541be",
+  "Extension-Dynamic-Biomass-Fuels" = "06dd67482b20a74a0e075782e66b09b4fe42c248",
+  "Extension-Dynamic-Fire-System" = "4970f846bd2b22f014f201ba2af2278436aefd7c",
+  "Extension-Land-Use-Plus" = "574940aa6382ed9e5840b78b0544300bf5a40cd2",
+  "Extension-LinearWind" = "b8efe5ca20ca386fc978db97670e50424941153e",
+  # "Extension-Root-Rot" = "", ## TODO: not yet ready for v8
+  "Extension-Social-Climate-Fire" = "b463ea378f1bcde4369907a408dfe64b9cc52c7a",
+  # "Extension-SOSIEL-Harvest" = "", ## TODO: not yet ready for v8
+
+  ## Output extensions
+  "Extension-Output-Biomass" = "d5cb256f7669df36a76d9337c779cdc7f1cdbd0b",
+  "Extension-Output-Biomass-By-Age" = "0419cc64634f57ad3660590408ded3aef88ecf9d",
+  "Extension-Output-Biomass-Community" = "58252f441cc393cc1e63ea6c36175e15bba93916",
+  "Extension-Output-Biomass-Reclass" = "fad7e9f7e39b9cf72e1e55210cb0e8cd09082671",
+  "Extension-Output-Cohort-Statistics" = "045272850c77b8b5e8c36ba1fe8c5041b7a523c2",
+  # "Extension-Output-Landscape-Habitat" = "", ## TODO: not yet ready for v8
+  "Extension-Output-Max-Species-Age" = "bba5b5a4879d0d6cbfbcce4867702bd4df3ac350",
+  "Extension-Output-Wildlife-Habitat" = "695a03ba11a21d8a12eb714a6c8759a8284290f2",
+
+  "Extension-Local-Habitat-Suitability-Output" = "1366a092625e0a26fff870e16529c1fe3e071c14"
 )
 
 ## 2. build extensions and make available for use --------------------------------------------------
 
 console.csproj <- file.path(landis.core.dir, "Tool-Console", "src", "Console.csproj")
 
-for (ext in landis.extensions) {
-  message(glue("Cloning {ext} extension..."))
-  system(glue("git -C {landis.dir} clone {landis.fork.url}/{ext}"))
+for (ext in names(landis.extensions)) {
+  ext.name <- ext
+  ext.sha <- landis.extensions[[ext]]
+  message(glue("Cloning {ext.name} ..."))
+  ## TODO: use sparse checkout
+  system(glue("git -C {landis.dir} clone --depth 1 {landis.fork.url}/{ext.name}"))
+  system(glue("git -C {landis.dir}/{ext.name} checkout {ext.sha}"))
 
-  message(glue("Building {ext} extension..."))
-  ext.inst.dir <- file.path(landis.dir, ext, "deploy", "installer")
-
-  if (ext == "Extension-Biomass-Drought") {
-    ext.src.dir <- list.dirs(file.path(landis.dir, ext), recursive = FALSE) |>
-      grep("component", x = _, value = TRUE) |>
-      file.path("src")
-  } else {
-    ext.src.dir <- file.path(landis.dir, ext, "src")
-  }
+  message(glue("Building {ext.name} extension..."))
+  ext.inst.dir <- file.path(landis.dir, ext.name, "deploy", "installer")
+  ext.src.dir <- file.path(landis.dir, ext.name, "src")
 
   for (esd in ext.src.dir) {
     ## ensure each extension can see additional libs
@@ -129,6 +161,9 @@ for (ext in landis.extensions) {
     ## ensure all `<Reference Include = ...>` items have `<HintPath>` specified, using relative paths
     system(glue("sed -i -e 's/lib\\\\1/..\\\\..\\\\Core-Model-v8-LINUX\\\\build\\\\extensions\\\\Ether/g' {ext.csproj}"))
     system(glue("sed -i -e 's/lib\\\\Landis.Library/..\\\\..\\\\Core-Model-v8-LINUX\\\\build\\\\extensions\\\\Landis.Library/g' {ext.csproj}"))
+
+    ## remove any .sln files as these don't help the builds
+    list.files(esd, "[.]sln$", full.names = TRUE) |> file.remove()
 
     system(glue("dotnet build {esd} -c Release"))
 
