@@ -6,9 +6,6 @@ FROM achubaty/geospatial:4.3.3-focal-ubuntugis
 
 LABEL org.opencontainers.image.authors="achubaty@for-cast.ca"
 
-## safely allow ssh access to private GitHub repos via the build machine's ssh
-RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
-
 ENV C_INCLUDE_PATH=/usr/include/gdal
 ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV DEBIAN_FRONTEND=noninteractive

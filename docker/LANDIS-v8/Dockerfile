@@ -5,9 +5,6 @@ FROM rocker/geospatial:4.4.3
 
 LABEL org.opencontainers.image.authors="achubaty@for-cast.ca"
 
-## safely allow ssh access to private GitHub repos via the build machine's ssh
-RUN mkdir -p -m 0700 ~/.ssh && ssh-keyscan github.com >> ~/.ssh/known_hosts
-
 ENV C_INCLUDE_PATH=/usr/include/gdal
 ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
 ENV DEBIAN_FRONTEND=noninteractive
@@ -24,9 +21,6 @@ RUN apt-get update -y && apt-get upgrade -y \
     wget \
   && rm -rf /var/lib/apt/lists/*
 
-## configure git
-RUN git config --global url.ssh://git@github.com/.insteadOf https://github.com/
-
 ## install LANDIS-II and extensions
 ARG LANDIS_GITHUB=https://github.com/LANDIS-II-Foundation
 ARG LANDIS_DIR=/opt/landis-ii
@@ -38,7 +32,7 @@ ARG PROJECT_DIR=/home/${DEFAULT_USER}/LANDIS-II
 WORKDIR ${LANDIS_DIR}
 
 ## get core model; use earlier commit (broken binaries on latest main)
-# RUN git clone --depth 1 ${LANDIS_GITHUB}/Core-Model-v8-LINUX
+# RUN git -C ${LANDIS_DIR} clone --depth 1 ${LANDIS_GITHUB}/Core-Model-v8-LINUX \
 RUN git -C ${LANDIS_DIR} clone ${LANDIS_GITHUB}/Core-Model-v8-LINUX \
   && git -C ${LANDIS_CORE_DIR} checkout 7b0f215705900423068b85cec5eb197de4a7b419
 
