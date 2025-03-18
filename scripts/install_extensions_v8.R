@@ -35,11 +35,11 @@ landis.libraries <- list(
   "Library-Universal-Cohort" = "a1e84adc8073fb7c89ee078a38349b5d578d4179"
 )
 
-for (lib in landis.libraries) {
+for (lib in names(landis.libraries)) {
   lib.name <- lib
   lib.sha <- landis.libraries[[lib]]
   message(glue("Cloning {lib} ..."))
-  system(glue("git -C {landis.dir} clone --depth 1 {landis.fork.url}/{lib.name}"))
+  system(glue("git -C {landis.dir} clone  --depth 5 {landis.github.url}/{lib.name}"))
   system(glue("git -C {landis.dir}/{lib.name} checkout {lib.sha}"))
 
   message(glue("Building {lib.name} ..."))
@@ -97,11 +97,15 @@ for (ext in names(landis.extensions)) {
   ext.sha <- landis.extensions[[ext]]
   message(glue("Cloning {ext.name} ..."))
   ## TODO: use sparse checkout
-  system(glue("git -C {landis.dir} clone --depth 1 {landis.fork.url}/{ext.name}"))
+  system(glue("git -C {landis.dir} clone  --depth 5 {landis.github.url}/{ext.name}"))
   system(glue("git -C {landis.dir}/{ext.name} checkout {ext.sha}"))
 
   message(glue("Building {ext.name} extension..."))
-  ext.inst.dir <- file.path(landis.dir, ext.name, "deploy", "installer")
+  ext.inst.dir <- switch(
+    ext.name,
+    "Extension-Biomass-Hurricane" = file.path(landis.dir, ext.name, "deploy", "current"),
+    file.path(landis.dir, ext.name, "deploy", "installer")
+  )
   ext.src.dir <- file.path(landis.dir, ext.name, "src")
 
   for (esd in ext.src.dir) {
@@ -205,6 +209,8 @@ for (ext in names(landis.extensions)) {
       warning(glue("Extension {ext} failed to build."))
     }
   }
+
+  unlink(file.path(landis.dir, ext.name), recursive = TRUE)
 }
 
 ## rebuild Tool-Console
