@@ -21,6 +21,9 @@ RUN apt-get update -y && apt-get upgrade -y \
     wget \
   && rm -rf /var/lib/apt/lists/*
 
+## configure git
+RUN git config --global url.ssh://git@github.com/.insteadOf https://github.com/
+
 ## install LANDIS-II and extensions
 ARG LANDIS_GITHUB=https://github.com/LANDIS-II-Foundation
 ARG LANDIS_DIR=/opt/landis-ii

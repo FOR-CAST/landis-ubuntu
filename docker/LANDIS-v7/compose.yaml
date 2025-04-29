@@ -1,0 +1,16 @@
+services:
+  rstudio:
+    environment:
+      GROUPID: 1000
+      PASSWORD: Caribou4!
+      USER: rstudio
+      USERID: 1000
+    image: achubaty/landis-ii-v7:latest
+    ports:
+      - "127.0.0.1:8686:8787"
+    volumes:
+      - ~/.config/rstudio:/home/rstudio/.config/rstudio
+      - type: bind
+        source: /mnt/projects/HRV/LANDIS-II
+        target: /home/rstudio/LANDIS-II
+
