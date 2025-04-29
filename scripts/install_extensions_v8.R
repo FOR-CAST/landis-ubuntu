@@ -119,40 +119,40 @@ for (lib in names(landis.libraries)) {
 
 landis.extensions <- rbind(
   ## Succession extensions
-  c(landis.github.org, "Extension-Biomass-Succession", "58ad3673e02abe82f437a6b68c44220c51351091"),
+  c(landis.github.org, "Extension-Biomass-Succession", "aaec1a123abc072cf6b6ccb58645530213e77661"),
   # TODO: "Extension-DGS-Succession" not yet ready for v8
   # TODO: "Extension-ForCS-Succession" not yet ready for v8
-  c(landis.github.org, "Extension-NECN-Succession", "dd5838ab2b5c8eef874d48b16e9e52480c5671b6"),
+  c(landis.github.org, "Extension-NECN-Succession", "6d8451e24bf6df5845a98c314540686b6f1d20a9"),
   # TODO: "Extension-PnET-Succession" see issue Extension-PnET-Succession#17
 
   ## Disturbance and other extensions
   c(landis.github.org, "Extension-Base-BDA", "1aaa2e28627ba21949fd9053b9aae18f099032d5"),
-  c(landis.github.org, "Extension-Base-Fire", "52b878c81aba65000689e0a572ac2ebc5a0cd0c7"),
-  c(landis.github.org, "Extension-Base-Wind", "85b9ac626b89241729d9d978baa99b271218cd7d"),
+  c(landis.github.org, "Extension-Base-Fire", "59a3f9a128cf474ca2971e4b485aed1f2e1025d8"),
+  c(landis.github.org, "Extension-Base-Wind", "84ab06131a007e78569e778d722a786986f2f8a9"),
   # TODO: "Extension-Biomass-Browse" not yet ready for v8
-  c(landis.github.org, "Extension-Biomass-Harvest", "24b01fea5a90b05b2732c3e52e09a02fdb47db59"),
+  c(landis.github.org, "Extension-Biomass-Harvest", "7e5efc0373e78001103b6b4d15aae4a96463a547"),
   c(landis.github.org, "Extension-Biomass-Hurricane", "a6afe3f3d2c8664023e32a9ca66544aa14d24449"),
-  c(landis.github.org, "Extension-Dynamic-Biomass-Fuels", "06dd67482b20a74a0e075782e66b09b4fe42c248"),
-  c(landis.github.org, "Extension-Dynamic-Fire-System", "999b479f503cfd4b4eb9cf0bf1f1a7af21b96eb6"),
-  c(landis.github.org, "Extension-Land-Use-Plus", "574940aa6382ed9e5840b78b0544300bf5a40cd2"),
+  c(landis.github.org, "Extension-Dynamic-Biomass-Fuels", "3a45afaec8c0dd17bf783043cd18eca8f79e1943"),
+  c(landis.github.org, "Extension-Dynamic-Fire-System", "6c62e31405e64a486d1cee9b21672e1a9ff34e43"),
+  c(landis.github.org, "Extension-Land-Use-Plus", "48bd05c98e7d041a36fcc5a3f6e9c310d68520f0"),
   c(landis.github.org, "Extension-LinearWind", "fde29473f773c9f995f3a702ca919f7f30a6bcd1"),
   # TODO: "Extension-Root-Rot" not yet ready for v8
-  c(landis.github.org, "Extension-Social-Climate-Fire", "0a9bb3de83a601804e825d41afcbb17fcaedbe76"),
+  c(landis.github.org, "Extension-Social-Climate-Fire", "9206bc0c5cded05941a8405cc5956f00c5b4b103"),
   # TODO: "Extension-SOSIEL-Harvest" not yet ready for v8
   # c("Klemet", "LANDIS-II-Forest-Roads-Simulation-extension", ""), ## TODO: need fixed .csproj
   # c("Klemet", "LANDIS-II-Magic-Harvest", ""),                     ## TODO: need fixed .csproj
 
   ## Output extensions
-  c(landis.github.org, "Extension-Output-Biomass", "d5cb256f7669df36a76d9337c779cdc7f1cdbd0b"),
+  c(landis.github.org, "Extension-Output-Biomass", "d24773efa0d57d9a00a23d4267ff30bd1179a7b6"),
   c("FOR-CAST", "Extension-Output-Biomass-By-Age", "b8e1cadfe79433ad1c064e588dfc273ae4bff6e5"),
-  c("FOR-CAST", "Extension-Output-Biomass-Community", "9d4dca5c205f5d2eeb8ed9e949a76e51764d862c"),
-  c(landis.github.org, "Extension-Output-Biomass-Reclass", "fad7e9f7e39b9cf72e1e55210cb0e8cd09082671"),
-  c("FOR-CAST", "Extension-Output-Cohort-Statistics", "fe9996e68aca8d407585535066c66717c784a459"),
+  c(landis.github.org, "Extension-Output-Biomass-Community", "5942e9bebafb0a618e8f46195aac0b118de4ae31"),
+  c(landis.github.org, "Extension-Output-Biomass-Reclass", "d21d4d1ecb96aad2c36b63dbffcd51838eed50c0"),
+  c(landis.github.org, "Extension-Output-Cohort-Statistics", "0b5cb4ba929bb2f0f87db14fc013e660a79da903"),
   # TODO: "Extension-Output-Landscape-Habitat" not yet ready for v8
-  c("FOR-CAST", "Extension-Output-Max-Species-Age", "5a1fcadc11a3f5fba6af85a961a6ea39ad622031"),
-  c(landis.github.org, "Extension-Output-Wildlife-Habitat", "695a03ba11a21d8a12eb714a6c8759a8284290f2"),
+  c(landis.github.org, "Extension-Output-Max-Species-Age", "5c9ae5394be1c897ed775cc446d800c34c3d5fec"),
+  c(landis.github.org, "Extension-Output-Wildlife-Habitat", "d5004e3aec2981124d180cc47b72cf636218f388"),
 
-  c(landis.github.org, "Extension-Local-Habitat-Suitability-Output", "1366a092625e0a26fff870e16529c1fe3e071c14")
+  c(landis.github.org, "Extension-Local-Habitat-Suitability-Output", "82d58f26da4b66ef1117b7f350d5ec9f5410776f")
 ) |>
   as.data.frame() |>
   setNames(c("org", "repo", "sha"))
