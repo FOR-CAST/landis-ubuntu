@@ -49,49 +49,49 @@
 [submodule "LANDIS-II/Extension-Land-Use-Plus"]
 	path = LANDIS-II/Extension-Land-Use-Plus
 	url = https://github.com/FOR-CAST/Extension-Land-Use-Plus
-[submodule "landis-ubuntu/LANDIS-II/Library-Biomass"]
+[submodule "LANDIS-II/Library-Biomass"]
 	path = LANDIS-II/Library-Biomass
 	url = https://github.com/FOR-CAST/Library-Biomass
-[submodule "landis-ubuntu/LANDIS-II/Library-Biomass-Harvest"]
+[submodule "LANDIS-II/Library-Biomass-Harvest"]
 	path = LANDIS-II/Library-Biomass-Harvest
 	url = https://github.com/FOR-CAST/Library-Biomass-Harvest
-[submodule "landis-ubuntu/LANDIS-II/Library-Climate"]
+[submodule "LANDIS-II/Library-Climate"]
 	path = LANDIS-II/Library-Climate
 	url = https://github.com/FOR-CAST/Library-Climate
-[submodule "landis-ubuntu/LANDIS-II/Library-Core"]
+[submodule "LANDIS-II/Library-Core"]
 	path = LANDIS-II/Library-Core
 	url = https://github.com/FOR-CAST/Library-Core
-[submodule "landis-ubuntu/LANDIS-II/Library-Datasets"]
+[submodule "LANDIS-II/Library-Datasets"]
 	path = LANDIS-II/Library-Datasets
 	url = https://github.com/FOR-CAST/Library-Datasets
-[submodule "landis-ubuntu/LANDIS-II/Library-Harvest-Mgmt"]
+[submodule "LANDIS-II/Library-Harvest-Mgmt"]
 	path = LANDIS-II/Library-Harvest-Mgmt
 	url = https://github.com/FOR-CAST/Library-Harvest-Mgmt
-[submodule "landis-ubuntu/LANDIS-II/Library-Initial-Community"]
+[submodule "LANDIS-II/Library-Initial-Community"]
 	path = LANDIS-II/Library-Initial-Community
 	url = https://github.com/FOR-CAST/Library-Initial-Community
-[submodule "landis-ubuntu/LANDIS-II/Library-Metadata"]
+[submodule "LANDIS-II/Library-Metadata"]
 	path = LANDIS-II/Library-Metadata
 	url = https://github.com/FOR-CAST/Library-Metadata
-[submodule "landis-ubuntu/LANDIS-II/Library-Parameters"]
+[submodule "LANDIS-II/Library-Parameters"]
 	path = LANDIS-II/Library-Parameters
 	url = https://github.com/FOR-CAST/Library-Parameters
-[submodule "landis-ubuntu/LANDIS-II/Library-PnET-Cohort"]
+[submodule "LANDIS-II/Library-PnET-Cohort"]
 	path = LANDIS-II/Library-PnET-Cohort
 	url = https://github.com/FOR-CAST/Library-PnET-Cohort
-[submodule "landis-ubuntu/LANDIS-II/Library-Site-Harvest"]
+[submodule "LANDIS-II/Library-Site-Harvest"]
 	path = LANDIS-II/Library-Site-Harvest
 	url = https://github.com/FOR-CAST/Library-Site-Harvest
-[submodule "landis-ubuntu/LANDIS-II/Library-Spatial"]
+[submodule "LANDIS-II/Library-Spatial"]
 	path = LANDIS-II/Library-Spatial
 	url = https://github.com/FOR-CAST/Library-Spatial
-[submodule "landis-ubuntu/LANDIS-II/Library-Succession"]
+[submodule "LANDIS-II/Library-Succession"]
 	path = LANDIS-II/Library-Succession
 	url = https://github.com/FOR-CAST/Library-Succession
-[submodule "landis-ubuntu/LANDIS-II/Library-Universal-Cohort"]
+[submodule "LANDIS-II/Library-Universal-Cohort"]
 	path = LANDIS-II/Library-Universal-Cohort
 	url = https://github.com/FOR-CAST/Library-Universal-Cohort
-[submodule "landis-ubuntu/LANDIS-II/Library-Utilities"]
+[submodule "LANDIS-II/Library-Utilities"]
 	path = LANDIS-II/Library-Utilities
 	url = https://github.com/FOR-CAST/Library-Utilities
 [submodule "LANDIS-II/Extension-Base-Harvest"]
