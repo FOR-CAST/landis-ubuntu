@@ -2,7 +2,7 @@
 ## <https://github.com/LANDIS-II-Foundation/Tool-Linux-Singularity/>
 
 ## NOTE: Ubuntu 20.04 Focal is the most recent OS that still supports .Net 2.1;
-FROM achubaty/geospatial:4.3.3-focal-ubuntugis
+FROM achubaty/geospatial:4.4.3-focal-ubuntugis
 
 LABEL org.opencontainers.image.authors="achubaty@for-cast.ca"
 
