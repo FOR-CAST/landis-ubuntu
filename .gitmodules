@@ -94,6 +94,3 @@
 [submodule "LANDIS-II/Library-Utilities"]
 	path = LANDIS-II/Library-Utilities
 	url = https://github.com/FOR-CAST/Library-Utilities
-[submodule "LANDIS-II/Extension-Base-Harvest"]
-	path = LANDIS-II/Extension-Base-Harvest
-	url = https://github.com/FOR-CAST/Extension-Base-Harvest
